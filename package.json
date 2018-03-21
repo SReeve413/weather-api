@@ -7,7 +7,7 @@
     "start:dev": "babel-watch . --watch src",
     "prepublish": "npm run transpile",
     "test": "mocha test/**/*.test.js",
-    "transpile": "babel src -d build -s inline",
+    "transpile": "babel src -d build -s inline --copy-files",
     "deploy": "npm run transpile && now . --public -e NODE_ENV=production"
   },
   "keywords": [],

@@ -20,12 +20,14 @@ const currentWeather = (results) => ({
   weather: results.weather[0].main,
   main: results.main,
 })
+
 const fiveDayWeather = (results) => ({
-  weather: results.list.map(result => ({
+    weather: results.list.map( result => ({
     temp: result.main.temp,
     date_time: result.dt_txt
   }))
 })
+
 
 export default {
   pkg,
@@ -70,5 +72,6 @@ export default {
         return await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},us&APPID=${API_KEY}&units=imperial`, fiveDayWeather)
       }
     })
+
   }
 }
